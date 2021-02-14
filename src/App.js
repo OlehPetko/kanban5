@@ -17,6 +17,7 @@ function App() {
     const [tasks, setTasks] = useState(initialState)
     const [newInputTask, setNewTask] = useState('')
     const [isEdit, setIsEdit] = useState(false)
+    const [inputTaskEdit, setInputTaskEdit] = useState('')
     const onChange = (e) => {
         setNewTask(e.target.value)
     }
@@ -49,10 +50,21 @@ function App() {
             if (id === el.id) {
                 return {...el, done: !el.done}
             }
-        return el
+            return el
         })
         setTasks(newTask)
     }
+    const editInput = (id, newName) => {
+        const newEditTask = tasks.map(el => {
+            if (el.id === id){
+                el.name = newName
+            }
+            return  el
+        })
+        setTasks(newEditTask)
+        setInputTaskEdit('')
+        setIsEdit(false)
+            }
 
 
     return (
@@ -62,6 +74,7 @@ function App() {
                 <div key={el}>
                     <Panel el={el} tasks={tasks} deleteTask={deleteTask} upTask={upTask} downTask={downTask}
                            newInputTask={newInputTask} updateDone={updateDone} isEdit={isEdit} setIsEdit={setIsEdit}
+                           editInput={editInput} inputTaskEdit={inputTaskEdit} setInputTaskEdit={setInputTaskEdit}
                     />
                 </div>
             )}
