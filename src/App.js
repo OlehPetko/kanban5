@@ -15,9 +15,9 @@ const initialState = [
 
 function App() {
     const [tasks, setTasks] = useState(initialState)
+    const [inputTaskEdit, setInputTaskEdit] = useState('')
     const [newInputTask, setNewTask] = useState('')
     const [isEdit, setIsEdit] = useState(false)
-    const [inputTaskEdit, setInputTaskEdit] = useState('')
     const onChange = (e) => {
         setNewTask(e.target.value)
     }

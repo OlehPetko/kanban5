@@ -8,8 +8,10 @@ function Task(props) {
     const done = props.el.done ? style : {}
 
     return (
-        <div className="App" style={done}>
+        <div className="App" >
+            <span style={done}>
             {props.el.name}
+            </span>
             <button onClick={() => props.updateDone(props.el.id)}>done</button>
             <button onClick={() => props.deleteTsk(props.el.id)}>delete</button>
             {props.el.status !== 'todo' && <button onClick={() => props.upTask(props.el.id)}>up</button>}
