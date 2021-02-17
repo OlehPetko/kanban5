@@ -7,7 +7,7 @@ import Bin from "./Bin";
 
 const statuses = ['todo', 'progress', 'review', 'done']
 const initialState = [
-    {id: Math.random(), name: 'Love', status: statuses[0], priority: 1, done: false},
+        {id: Math.random(), name: 'Love', status: statuses[0], priority: 1, done: false},
     {id: Math.random(), name: 'I love you', status: statuses[1], priority: 2, done: false},
     {id: Math.random(), name: 'I dont love', status: statuses[2], priority: 1, done: false},
     {id: Math.random(), name: 'I dident love', status: statuses[3], priority: 2, done: false}
@@ -74,8 +74,7 @@ function App() {
                 <div key={el}>
                     <Panel el={el} tasks={tasks} deleteTask={deleteTask} upTask={upTask} downTask={downTask}
                            newInputTask={newInputTask} updateDone={updateDone} isEdit={isEdit} setIsEdit={setIsEdit}
-                           editInput={editInput} inputTaskEdit={inputTaskEdit} setInputTaskEdit={setInputTaskEdit}
-                    />
+                           editInput={editInput}   inputTaskEdit={inputTaskEdit}   setInputTaskEdit={setInputTaskEdit}                 />
                 </div>
             )}
             <hr/>

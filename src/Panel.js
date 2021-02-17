@@ -13,7 +13,7 @@ function Panel(props) {
                 .map(el => <Task el={el} key={el.id} deleteTsk={props.deleteTask}
                                  upTask={props.upTask} downTask={props.downTask}
                                  updateDone={props.updateDone} isEdit={props.isEdit} setIsEdit={props.setIsEdit}
-                                 inputTaskEdit={props.inputTaskEdit} setInputTaskEdit={props.setInputTaskEdit} editInput={props.editInput}
+                                 editInput={props.editInput} inputTaskEdit={props.inputTaskEdit}  setInputTaskEdit={props.setInputTaskEdit}
 
                 />)}
 

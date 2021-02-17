@@ -1,11 +1,14 @@
 import './App.css';
 
+
 const style = {
     'textDecoration': 'line-through'
 }
 
+
 function Task(props) {
     const done = props.el.done ? style : {}
+
 
     return (
         <div className="App" >
@@ -16,13 +19,14 @@ function Task(props) {
             <button onClick={() => props.deleteTsk(props.el.id)}>delete</button>
             {props.el.status !== 'todo' && <button onClick={() => props.upTask(props.el.id)}>up</button>}
             {props.el.status !== 'done' && <button onClick={() => props.downTask(props.el.id)}>down</button>}
-            {props.isEdit && <input value={props.inputTaskEdit} onChange={(e) => props.setInputTaskEdit(e.target.value)}/>}
-            {props.isEdit && <button onClick={() => props.editInput(props.el.id, props.inputTaskEdit)}>save</button>}
-            {props.isEdit && <button onClick={() => props.setIsEdit(!props.isEdit)}>cancel</button>}
-            {!props.isEdit && <button onClick={() => props.setIsEdit(!props.isEdit)}>edit</button>}
+
 
 
             <div>
+                {props.isEdit && <input value={props.inputTaskEdit} onChange={(e) => props.setInputTaskEdit(e.target.value)}/>}
+                {props.isEdit && <button onClick={() => props.editInput(props.el.id, props.inputTaskEdit)}>save</button>}
+                {props.isEdit && <button onClick={() => props.setIsEdit(!props.isEdit)}>cancel</button>}
+                {!props.isEdit && <button onClick={() => props.setIsEdit(!props.isEdit)}>edit</button>}
                 priority: {props.el.priority}
             </div>
 
